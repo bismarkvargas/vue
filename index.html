@@ -1,24 +1,12 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>Mi Primera app con VUE.JS</title>
-  <!-- development version, includes helpful console warnings -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-</head>
+<html lang="en-US">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <body>
-  <div id="app">{{message}}</div>
-  <script>
-  new vue({
- el:'#app',
-    data:{
-    message:'Hola mundo!!'
-    
-    }
-  
-  
-  })
-  
-  </script>
+
+<div ng-app="">
+  <p>Name : <input type="text" ng-model="name"></p>
+  <h1>Hello {{name}}</h1>
+</div>
 
 </body>
 </html>
