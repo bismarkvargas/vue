@@ -24,6 +24,8 @@
 	
 	<source src="https://bismarkvargas.github.io/vue/video_ejemplo.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 </video>
+<button onclick="reproducir()">Reproducir</button>
+<button onclick="pausar()">Parar</button>
 	<footer style="
 position:fixed;
 bottom: 0px;
@@ -44,6 +46,24 @@ animate();
 function get(){
 window.location.href = "https://entelecableestamosvolando.com/";
 }
+
+  //////controls play
+    
+  window.reproducir = function() {
+    document.getElementById("video").play();
+};
+
+window.pausar = function() {
+    document.getElementById("video").pause();
+};
+
+	
+	
+
+
+
+
+
 	
 function myFunction() {
  document.getElementById("test").style.display = "block";
@@ -71,11 +91,7 @@ function initialize()
 	totalTime = 0;
 	
 	
-    //////controls play
-    
-       
-	
-	
+  
 	
 	////////////////////////////////////////////////////////////
 	// setup arToolkitSource
