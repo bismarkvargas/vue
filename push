@@ -1,0 +1,63 @@
+  try
+            {
+
+
+                var result = "-1";
+                var webAddr = "https://fcm.googleapis.com/fcm/send";
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(webAddr);
+                httpWebRequest.ContentType = "application/json";
+                httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, "key=AIzaSyDcMHtUxJpgtZioRulDjOsO8HOuE7IQC68");
+                httpWebRequest.Method = "POST";
+                using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+                {
+                    // string strNJson = @"{
+                    // ""to"": ""/topics/Lehmann"",
+                    // ""data"": {
+                    //     ""ShortDesc"": ""Some short desc"",
+                    //     ""IncidentNo"": ""any number"",
+                    //     ""Description"": ""detail desc""
+                    //  },
+                    //  ""notification"": {
+                    //                ""title"": ""ServiceNow: Incident No. number"",
+                    //    ""text"": ""This is Notification"",
+                    //""sound"":""default""
+                    //  }
+                    //        }";
+
+
+                    string json_get = "{ 'notification' : { 'body' : '" + mensaje_push.Text +
+                                                       "', 'title' : '" + titulo_push.Text + "', " +
+                                                       "'icon' : 'ic_notif_symulti','" +
+                                                       "click_action' : 'OPEN_ACTIVITY_1',   " +
+                                                       "'sound':'default'}, " +
+                                                 "'data': {'image':'" + link_imagen.Text + "', " +
+                                                       "'message':  '" + mensaje_push.Text + "'," +
+                                                       "'link':'" + Link_web.Text + "'," +
+                                                       "'precio':'" + precio_push.Text + "'," +
+                                                       " 'nombre':'" + nombre_push.Text + "'," +
+                                                       "'novedad':'" + frase_push.Text + "', " +
+                                                       "'botton':'" + nombre_botton.Text + "', " +
+                                                       "'message':'" + mensaje_push.Text + "'}," +
+                                                 " 'to' : '/topics/" + Topic_select + "' }";
+
+
+                    // MessageBox.Show(json_get.Replace(@"'", @""""));
+                 
+                    string strNJson = json_get.Replace(@"'", @"""");
+
+
+                  
+
+                    streamWriter.Write(strNJson);
+                    streamWriter.Flush();
+                }
+
+                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    result = streamReader.ReadToEnd();
+                }
+                // return result;
+
+                MessageBox.Show("¡Mensajes enviados!");
+            }
