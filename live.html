@@ -5,6 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="https://bismarkvargas.github.io/vue/style.css" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <style>
         body {
             background: #0098ff;
@@ -19,11 +27,11 @@
 
         video {
             background: white;
-            background-image: url(https://www.kirupa.com/images/orange_logo_svg.svg);
+            background-image: url(https://image.flaticon.com/icons/png/512/527/527995.png);
             background-repeat: no-repeat;
             background-position: center;
             background-size: contain;
-            max-width: calc(50% - 5%);
+            /*max-width: calc(50% - 5%);*/
             margin: 0 5%;
             box-sizing: border-box;
             border-radius: 2px;
@@ -43,11 +51,14 @@
 <body>
     <!-- Out Canvas Element for output -->
     <!--<canvas id="output" height="426" width="640"></canvas>-->
-    <button onclick="App.start('glasses');">cargar</button>
-    <video id="localVideo" autoplay muted></video>
-    <video id="remoteVideo" autoplay></video>
+    <!--<button onclick="App.start('glasses');">cargar</button>-->
+   
+    
     <br />
-
+    <div class="row">
+        <div class="col-xs-6"> <video id="localVideo" autoplay muted></video></div>
+        <div class="col-xs-6"><video id="remoteVideo" autoplay></video></div>
+    </div>
     <script src="https://bismarkvargas.github.io/vue/script.js"></script>
     <script src="https://bismarkvargas.github.io/vue/ccv.js"></script>
     <script src="https://bismarkvargas.github.io/vue/face.js"></script>
